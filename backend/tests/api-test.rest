@@ -1,18 +1,1 @@
-### Test Root Route
-GET http://localhost:5000/
-
-### Get All Recipes
-GET http://localhost:5000/api/recipes
-
-### Create a New Recipe
-POST http://localhost:5000/api/recipes
-Content-Type: application/json
-
-{
-  "name": "Chocolate Cake",
-  "ingredients": ["Flour", "Sugar", "Cocoa Powder", "Eggs", "Butter"],
-  "instructions": "Mix all ingredients, bake at 350°F for 30 minutes.",
-  "prepTime": 15,
-  "cookTime": 30,
-  "servings": 6
-}
+DELETE http://localhost:5000/api/reviews/6518e78dfc3b2a1c8b6f2d5d

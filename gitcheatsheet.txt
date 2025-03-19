@@ -1,0 +1,24 @@
+# Get latest code
+git checkout main && git pull origin main
+
+# Create a new branch
+git checkout -b feature-name
+
+# Work on your feature...
+
+# Commit changes
+git add . && git commit -m "Your message"
+
+# Push to GitHub
+git push -u origin feature-name
+
+# Open PR, review, merge on GitHub...
+
+# Sync main
+git checkout main && git pull origin main
+
+# Merge feature
+git merge feature-name && git push origin main
+
+# Cleanup
+git branch -d feature-name && git push origin --delete feature-name
