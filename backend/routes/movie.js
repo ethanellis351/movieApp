@@ -3,10 +3,15 @@ import { getPopularMovies, getMovieDetails } from "../utils/tmdb.js";
 
 const router = express.Router();
 
-// Get popular movies
+// Get top 50 popular movies in the USA
 router.get("/popular", async (req, res) => {
-  const movies = await getPopularMovies();
-  res.json({ movies });
+  try {
+    const movies = await getPopularMovies();
+    res.json({ movies });
+  } catch (error) {
+    console.error("Error in /popular route:", error);
+    res.status(500).json({ error: "Failed to fetch popular movies" });
+  }
 });
 
 // Get movie details

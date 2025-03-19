@@ -11,11 +11,13 @@ const tmdbApi = axios.create({
   params: { api_key: TMDB_API_KEY, language: "en-US" },
 });
 
-// Fetch popular movies
+// Fetch popular movies in the USA
 export const getPopularMovies = async () => {
   try {
-    const response = await tmdbApi.get("/movie/popular");
-    return response.data.results;
+    const response = await tmdbApi.get("/movie/popular", {
+      params: { region: "US" }, // Add region parameter
+    });
+    return response.data.results.slice(0, 50); // Limit to top 50 movies
   } catch (error) {
     console.error("Error fetching popular movies:", error);
     return [];
