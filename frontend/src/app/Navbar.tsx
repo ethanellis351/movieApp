@@ -7,7 +7,7 @@ export default function Navbar() {
     <nav className="w-full bg-black bg-opacity-80 backdrop-blur-md fixed top-0 left-0 z-50 shadow-md">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <h1 className="text-2xl font-bold text-white">Moviews</h1>
+        <h1 className="text-2xl font-bold text-white"><Link href="/">Moviews</Link></h1>
 
         {/* Navigation Links */}
         <div className="flex space-x-6">
@@ -20,8 +20,8 @@ export default function Navbar() {
           <Link href="/reviews" className="text-white hover:text-blue-500 transition">
             Reviews
           </Link>
-          <Link href="/about" className="text-white hover:text-blue-500 transition">
-            About
+          <Link href="/profile" className="text-white hover:text-blue-500 transition">
+            Profile
           </Link>
         </div>
       </div>

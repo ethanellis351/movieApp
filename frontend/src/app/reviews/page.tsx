@@ -41,7 +41,8 @@ export default function ReviewsPage() {
       {/* Navbar */}
       <Navbar />
 
-      <div className="pt-16 px-8">
+      {/* Add padding to prevent content from being hidden behind the navbar */}
+      <div className="pt-20 px-8">
         {/* Search Bar */}
         <div className="flex justify-center mb-8">
           <input

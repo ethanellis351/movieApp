@@ -1,10 +1,12 @@
 "use client";
 
-import Head from 'next/head';
+import Head from "next/head";
 import Navbar from "../app/Navbar";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Scrollbar } from "swiper/modules"; // Correct import for Scrollbar
 import "swiper/css";
+import "swiper/css/scrollbar"; // Import Swiper Scrollbar styles
 
 export default function Home() {
   interface Movie {
@@ -46,14 +48,20 @@ export default function Home() {
         <p className="mt-4 text-lg">Discover and review your favorite movies.</p>
       </section>
 
-      {/* Reviews Section with Carousel */}
+      {/* Popular Movies Section with Carousel */}
       <section id="reviews" className="flex flex-col items-center justify-center h-screen bg-white">
         <h2 className="text-3xl font-bold mb-8">Popular Movies</h2>
         <div className="w-full max-w-4xl">
-          <Swiper spaceBetween={20} slidesPerView={3} grabCursor={true}>
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={3}
+            grabCursor={true}
+            modules={[Scrollbar]} // Enable the Scrollbar module
+            scrollbar={{ draggable: true }} // Make the scrollbar draggable
+          >
             {popularMovies.map((movie) => (
               <SwiperSlide key={movie.id}>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center pb-4"> {/* Add padding to the bottom */}
                   <img
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                     alt={movie.title}
